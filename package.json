@@ -2,7 +2,7 @@
   "name": "algolia-places-react",
   "version": "1.0.0",
   "description": "React wrapper for Algolia Places geocoder",
-  "main": "index.js",
+  "main": "src/index.js",
   "repository": "https://github.com/kontrollanten/algolia-places-react",
   "author": "kontrollanten",
   "license": "MIT",
