@@ -1,14 +1,21 @@
 module.exports = {
-    "extends": [
-      "airbnb",
-    ],
-    "plugins": [
-      "jest"
-    ],
-    "env": {
-      "jest/globals": true
-    },
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+  ],
+  "plugins": [
+    "jest"
+  ],
+  "env": {
+    "jest/globals": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": 0
+  },
+  "overrides": {
+    "files": ["*.test.js"],
     "rules": {
-      "react/jsx-filename-extension": 0
-    }
+      "no-console": 0
+    },
+  }
 };

@@ -4,26 +4,40 @@ import { expect } from 'chai';
 import Enzyme, { mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
-import Places from 'places.js';
-
-const mockPlaces = jest.genMockFromModule('places.js');
-const spyPlaces = sinon.spy(Places);
-
 import AlgoliaPlaces from './AlgoliaPlaces';
 
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('AlgoliaPlaces', () => {
-  it('should only mount once', () => {
-    sinon.spy(AlgoliaPlaces.prototype, 'componentDidMount');
-    const context = mount(<AlgoliaPlaces />);
+  describe('validation', () => {
+    beforeEach(() => {
+      sinon.stub(console, 'error');
+    });
 
-    expect(AlgoliaPlaces.prototype.componentDidMount.calledOnce).to.equal(true);
+    it('should log an error when options.type is not valid', () => {
+      mount(<AlgoliaPlaces options={{ type: 'invalid' }} />);
+      expect(console.error.calledOnce).to.equal(true);
+      expect(console.error.firstCall.args[0]).to.match(/options.type/);
+    });
   });
 
-  it('should pass options prop to Place.js constructor', () => {
+  it('should only mount once', () => {
+    sinon.spy(AlgoliaPlaces.prototype, 'componentDidMount');
     mount(<AlgoliaPlaces />);
-    console.log(spyPlaces);
-    expect(spyPlaces.called).to.equal(true);
+
+    expect(AlgoliaPlaces.prototype.componentDidMount.callCount).to.equal(1);
+  });
+
+  it('should display default placeholder', () => {
+    const context = mount(<AlgoliaPlaces />);
+
+    expect(context.find('input').prop('placeholder')).to.equal('Type an address');
+  });
+
+  it('should display provided placeholder', () => {
+    const placeholder = 'custom placeholder';
+    const context = mount(<AlgoliaPlaces placeholder={placeholder} />);
+
+    expect(context.find('input').prop('placeholder')).to.equal(placeholder);
   });
 });

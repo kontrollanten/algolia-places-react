@@ -16,6 +16,8 @@
   },
   "devDependencies": {
     "babel": "^6.23.0",
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "chai": "^4.1.2",
@@ -36,6 +38,6 @@
   },
   "dependencies": {
     "places.js": "^1.4.18",
-    "proptypes": "^1.1.0"
+    "prop-types": "^15.6.0"
   }
 }
