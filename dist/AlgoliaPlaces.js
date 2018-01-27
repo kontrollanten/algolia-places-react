@@ -40,21 +40,27 @@ var AlgoliaPlaces = function (_React$Component) {
   _createClass(AlgoliaPlaces, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      var _this2 = this;
+
       this.autocomplete = (0, _places2.default)(_extends({}, this.props.options, {
         container: this.autocompleteElem
       }));
 
-      this.autocomplete.on('suggestions', this.props.onSuggestions);
-      this.autocomplete.on('cursorchanged', this.props.onCursorChanged);
-      this.autocomplete.on('change', this.props.onChange);
-      this.autocomplete.on('clear', this.props.onClear);
-      this.autocomplete.on('limit', this.props.onLimit);
-      this.autocomplete.on('error', this.props.onError);
+      ['onSuggestions', 'onCursorChanged', 'onChange', 'onClear', 'onLimit', 'onError'].filter(function (prop) {
+        return !!_this2.props[prop];
+      }).map(function (prop) {
+        return { prop: prop, eventName: prop.substr(2).toLowerCase() };
+      }).forEach(function (_ref) {
+        var prop = _ref.prop,
+            eventName = _ref.eventName;
+
+        _this2.autocomplete.on(eventName, _this2.props[prop]);
+      });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return _react2.default.createElement(
         'div',
@@ -62,8 +68,8 @@ var AlgoliaPlaces = function (_React$Component) {
         _react2.default.createElement('input', {
           placeholder: this.props.placeholder,
           type: 'text',
-          ref: function ref(_ref) {
-            _this2.autocompleteElem = _ref;
+          ref: function ref(_ref2) {
+            _this3.autocompleteElem = _ref2;
           }
         })
       );
@@ -106,24 +112,12 @@ AlgoliaPlaces.propTypes = {
 };
 AlgoliaPlaces.defaultProps = {
   placeholder: 'Type an address',
-  onCursorChanged: function onCursorChanged() {
-    return undefined;
-  },
-  onSuggestions: function onSuggestions() {
-    return undefined;
-  },
-  onChange: function onChange() {
-    return undefined;
-  },
-  onClear: function onClear() {
-    return undefined;
-  },
-  onLimit: function onLimit() {
-    return undefined;
-  },
-  onError: function onError() {
-    return undefined;
-  },
+  onCursorChanged: null,
+  onSuggestions: null,
+  onChange: null,
+  onClear: null,
+  onLimit: null,
+  onError: null,
   options: {}
 };
 exports.default = AlgoliaPlaces;

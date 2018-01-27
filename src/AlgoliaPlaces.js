@@ -5,12 +5,14 @@ import Places from 'places.js';
 export default class AlgoliaPlaces extends React.Component {
   static propTypes = {
     placeholder: PropTypes.string,
+    /* eslint-disable react/no-unused-prop-types */
     onCursorChanged: PropTypes.func,
     onSuggestions: PropTypes.func,
     onChange: PropTypes.func,
     onClear: PropTypes.func,
     onLimit: PropTypes.func,
     onError: PropTypes.func,
+    /* eslint-enable react/no-unused-prop-types */
     options: PropTypes.shape({
       type: PropTypes.oneOf([
         'city',
@@ -46,12 +48,12 @@ export default class AlgoliaPlaces extends React.Component {
 
   static defaultProps = {
     placeholder: 'Type an address',
-    onCursorChanged: () => undefined,
-    onSuggestions: () => undefined,
-    onChange: () => undefined,
-    onClear: () => undefined,
-    onLimit: () => undefined,
-    onError: () => undefined,
+    onCursorChanged: null,
+    onSuggestions: null,
+    onChange: null,
+    onClear: null,
+    onLimit: null,
+    onError: null,
     options: {},
   };
 
@@ -61,12 +63,19 @@ export default class AlgoliaPlaces extends React.Component {
       container: this.autocompleteElem,
     });
 
-    this.autocomplete.on('suggestions', this.props.onSuggestions);
-    this.autocomplete.on('cursorchanged', this.props.onCursorChanged);
-    this.autocomplete.on('change', this.props.onChange);
-    this.autocomplete.on('clear', this.props.onClear);
-    this.autocomplete.on('limit', this.props.onLimit);
-    this.autocomplete.on('error', this.props.onError);
+    [
+      'onSuggestions',
+      'onCursorChanged',
+      'onChange',
+      'onClear',
+      'onLimit',
+      'onError',
+    ]
+      .filter(prop => !!this.props[prop])
+      .map(prop => ({ prop, eventName: prop.substr(2).toLowerCase() }))
+      .forEach(({ prop, eventName }) => {
+        this.autocomplete.on(eventName, this.props[prop]);
+      });
   }
 
   render() {
