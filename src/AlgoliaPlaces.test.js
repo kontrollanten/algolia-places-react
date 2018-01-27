@@ -55,9 +55,14 @@ describe('AlgoliaPlaces', () => {
     });
 
     it('should log an error when options.countries is not a string with length of 2', () => {
-      mount(<AlgoliaPlaces options={{ countries: 'sve' }} />);
+      mount(<AlgoliaPlaces options={{ countries: ['sve'] }} />);
       expect(console.error.calledOnce).to.equal(true);
       expect(console.error.firstCall.args[0]).to.match(/options.countries/);
+    });
+
+    it('should accept when options.contries contains a string with length of 2', () => {
+      mount(<AlgoliaPlaces options={{ countries: ['sv'] }} />);
+      expect(console.error.calledOnce).to.equal(false);
     });
 
     it('should log an error when options.aroundLatLng is not a string', () => {
