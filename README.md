@@ -1,0 +1,34 @@
+# React wrapper for [Algolia Places](https://github.com/algolia/places)
+
+This package will make Algolia Places available as a React component. It's just a wrapper, so the dom manipulation won't go through the virtual dom.
+
+## Installation
+```
+npm install https://github.com/kontrollanten/algolia-places-react
+```
+
+## Usage
+```
+import React from 'react';
+import AlgoliaPlaces from 'algolia-places-react';
+
+export default () => {
+  return (<AlgoliaPlaces
+    placeholder='Write an address here'
+    onChange={({ query, rawAnswer, suggestion, suggestionIndex }) => 
+      console.log('Fired when suggestion selected in the dropdown or hint was validated.')}
+    onSuggestions={({ rawAnswer, query, suggestions }) => 
+      console.log('Fired when dropdown receives suggestions. You will receive the array of suggestions that are displayed.')}
+    onCursorChanged={({ rawAnswer, query, suggestion, suggestonIndex }) => 
+      console.log('Fired when arrows keys are used to navigate suggestions.')}
+    onClear={() => console.log('Fired when the input is cleared.')}
+    onLimit={({ message }) => console.log('Fired when you reached your current rate limit.')}
+    onError={({ message }) => console.log('Fired when we could not make the request to Algolia Places servers for any reason but reaching your rate limit.')}
+  />);  
+}
+```
+
+Read more at [Algolia Places site](https://community.algolia.com/places/documentation.html)
+
+## Todo
+Implement support for using [Places methods](https://community.algolia.com/places/documentation.html#methods)
