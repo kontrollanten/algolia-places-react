@@ -14,8 +14,15 @@ module.exports = {
   },
   "overrides": {
     "files": ["*.test.js"],
+    "globals": {
+      "Event": true,
+      "KeyboardEvent": true,
+      "MouseEvent": true,
+      "window": true,
+    },
     "rules": {
-      "no-console": 0
+      "no-console": 0,
+      "no-empty": 0,
     },
   }
 };
