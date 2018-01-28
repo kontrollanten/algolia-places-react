@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const StringReplacePlugin = require('string-replace-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -16,6 +17,27 @@ module.exports = {
         test: /\.js$/,
         exclude: /\test.js$/,
         loader: 'babel-loader'
+      },
+      {
+        /** Workaround while waiting for https://github.com/madrobby/zepto/pull/1319 */
+        test: /\.js$/,
+        loader: StringReplacePlugin.replace({
+          replacements: [
+            {
+              pattern: /e.data = data/g,
+              replacement: function() { 
+                return `
+                  var dataPropDescriptor = Object.getOwnPropertyDescriptor(e, 'data')
+                  if (!dataPropDescriptor || dataPropDescriptor.writable) {
+                    try {
+                      e.data = data
+                    } catch (error) { }
+                  }
+                `; 
+              },
+            }
+          ]
+        })
       }
     ]
   },
