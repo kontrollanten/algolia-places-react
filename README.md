@@ -1,5 +1,4 @@
-# React wrapper for [Algolia Places](https://github.com/algolia/places) [![codecov](https://codecov.io/gh/kontrollanten/algolia-places-react/branch/master/graph/badge.svg)](https://codecov.io/gh/kontrollanten/algolia-places-react)
-[![Known Vulnerabilities](https://snyk.io/test/github/kontrollanten/algolia-places-react/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kontrollanten/algolia-places-react?targetFile=package.json)
+# React wrapper for [Algolia Places](https://github.com/algolia/places) [![codecov](https://codecov.io/gh/kontrollanten/algolia-places-react/branch/master/graph/badge.svg)](https://codecov.io/gh/kontrollanten/algolia-places-react)[![Known Vulnerabilities](https://snyk.io/test/github/kontrollanten/algolia-places-react/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kontrollanten/algolia-places-react?targetFile=package.json)[![Build Status](https://travis-ci.org/kontrollanten/algolia-places-react.svg?branch=master)](https://travis-ci.org/kontrollanten/algolia-places-react)
 
 This package will make Algolia Places available as a React component. It's just a wrapper, so the dom manipulation won't go through the virtual dom.
 
