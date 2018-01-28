@@ -7,7 +7,7 @@
   "author": "kontrollanten",
   "license": "MIT",
   "scripts": {
-    "build": "babel src --out-dir dist --ignore '*.test.js'",
+    "build": "parcel build src/index.js --no-minify",
     "test": "jest",
     "test:ci": "yarn snyk test && jest --coverage && codecov",
     "lint": "eslint src",
@@ -47,6 +47,7 @@
     "eslint-plugin-react": "^7.6.0",
     "husky": "^0.14.3",
     "jest-cli": "^22.1.4",
+    "parcel-bundler": "^1.5.1",
     "publish-please": "^2.3.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
