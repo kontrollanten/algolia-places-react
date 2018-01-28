@@ -9,7 +9,7 @@
   "scripts": {
     "build": "babel src --out-dir dist --ignore '*.test.js'",
     "test": "jest",
-    "test:ci": "jest --coverage && codecov",
+    "test:ci": "yarn snyk test && jest --coverage && codecov",
     "lint": "eslint src",
     "precommit": "yarn lint",
     "prepush": "yarn test",
@@ -41,6 +41,7 @@
     "react-dom": "^16.2.0",
     "sinon": "^4.2.1",
     "sinon-chai": "^2.14.0",
+    "snyk": "^1.69.3",
     "webpack": "^3.10.0"
   },
   "dependencies": {
