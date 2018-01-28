@@ -152,6 +152,132 @@ describe('AlgoliaPlaces', () => {
     });
   });
 
+  describe('events', () => {
+    it('should call onSuggestions when suggestions is received', async () => {
+      const onSuggestions = sinon.spy();
+      const wrapper = mount(<AlgoliaPlaces onSuggestions={onSuggestions} />);
+
+      wrapper.find('input').instance().value = 'Huddinge';
+      wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
+
+      await waitUntil(() => onSuggestions.calledOnce);
+      expect(onSuggestions.calledOnce).to.equal(true);
+      const { suggestions } = onSuggestions.firstCall.args[0];
+      expect(suggestions.length).to.equal(5);
+    });
+
+    it('should call onCursorChanged when arrowDown key is pressed', async () => {
+      const onCursorChanged = sinon.spy();
+      const onSuggestions = sinon.spy();
+      const wrapper = mount(<AlgoliaPlaces
+        onCursorChanged={onCursorChanged}
+        onSuggestions={onSuggestions}
+      />);
+
+      wrapper.find('input').instance().value = 'Huddinge';
+      wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
+
+      await waitUntil(() => onSuggestions.calledOnce, 'Waited for onSuggestion to have been called');
+      const keyboardEvent = new KeyboardEvent('keydown', { which: 40 });
+      wrapper.find('input').getDOMNode().dispatchEvent(keyboardEvent);
+
+      await waitUntil(() => onCursorChanged.called, 'Waited for onCursorChanged to have been called.');
+
+      expect(onCursorChanged.called).to.equal(true);
+    });
+
+    it('should call onChange when a suggestion is clicked', async () => {
+      const onChange = sinon.spy();
+      const onSuggestions = sinon.spy();
+      const wrapper = mount(<AlgoliaPlaces
+        onChange={onChange}
+        onSuggestions={onSuggestions}
+      />);
+
+      wrapper.find('input').instance().value = 'Huddinge';
+      wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
+
+      await waitUntil(() => onSuggestions.calledOnce, 'Waited for onSuggestion to have been called');
+      await waitUntil(() => wrapper.getDOMNode().querySelectorAll('.ap-suggestion').length > 0, 'Waited for suggestions');
+
+      wrapper.getDOMNode().querySelector('.ap-suggestion').dispatchEvent(new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      }));
+
+      await waitUntil(() => onChange.called, 'Waited for onChange to have been called.');
+
+      const { suggestion, suggestionIndex } = onChange.firstCall.args[0];
+
+      expect(onChange.calledOnce).to.equal(true);
+      expect(suggestion === undefined).to.equal(false);
+      expect(suggestionIndex).to.equal(0);
+    });
+
+    xit('should call onClear when the input field gets empty', async () => {
+      const onClear = sinon.spy();
+      const onChange = sinon.spy();
+      const onSuggestions = sinon.spy();
+
+      const wrapper = mount(<AlgoliaPlaces
+        onChange={onChange}
+        onSuggestions={onSuggestions}
+        onClear={onClear}
+      />);
+
+      wrapper.find('input').instance().value = 'Huddinge';
+      wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
+      await waitUntil(() => onSuggestions.calledOnce, 'Waited for onSuggestion to have been called');
+
+      wrapper.find('input').getDOMNode().value = '';
+      wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
+
+      expect(onClear.calledOnce).to.equal(true);
+    });
+
+    it('should call onLimit when HTTP request to Algolia returns 489', async () => {
+      const onLimit = sinon.spy();
+
+      const fakeXhr = sinon.useFakeXMLHttpRequest();
+      let suggestionRequest;
+      fakeXhr.onCreate = (xhr) => { suggestionRequest = xhr; };
+
+      const wrapper = mount(<AlgoliaPlaces
+        onLimit={onLimit}
+      />);
+
+      wrapper.find('input').instance().value = 'Huddinge';
+      wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
+      suggestionRequest.respond(429, {}, JSON.stringify({}));
+
+      await waitUntil(() => onLimit.called);
+
+      expect(onLimit.calledOnce).to.equal(true);
+      expect(typeof onLimit.firstCall.args[0].message).to.equal('string');
+    });
+
+    it('should call onError when HTTP request returns bad status code', async () => {
+      const onError = sinon.spy();
+
+      const fakeXhr = sinon.useFakeXMLHttpRequest();
+      let suggestionRequest;
+      fakeXhr.onCreate = (xhr) => { suggestionRequest = xhr; };
+
+      const wrapper = mount(<AlgoliaPlaces
+        onError={onError}
+      />);
+
+      wrapper.find('input').instance().value = 'Huddinge';
+      wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
+      suggestionRequest.respond(404, {}, JSON.stringify({}));
+
+      await waitUntil(() => onError.called);
+
+      expect(onError.calledOnce).to.equal(true);
+      expect(typeof onError.firstCall.args[0].message).to.equal('string');
+    });
+  });
+
   it('should only mount once', () => {
     sinon.spy(AlgoliaPlaces.prototype, 'componentDidMount');
     mount(<AlgoliaPlaces />);
@@ -170,129 +296,5 @@ describe('AlgoliaPlaces', () => {
     const wrapper = mount(<AlgoliaPlaces placeholder={placeholder} />);
 
     expect(wrapper.find('input').prop('placeholder')).to.equal(placeholder);
-  });
-
-  it('should call onSuggestions when suggestions is received', async () => {
-    const onSuggestions = sinon.spy();
-    const wrapper = mount(<AlgoliaPlaces onSuggestions={onSuggestions} />);
-
-    wrapper.find('input').instance().value = 'Huddinge';
-    wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
-
-    await waitUntil(() => onSuggestions.calledOnce);
-    expect(onSuggestions.calledOnce).to.equal(true);
-    const { suggestions } = onSuggestions.firstCall.args[0];
-    expect(suggestions.length).to.equal(5);
-  });
-
-  it('should call onCursorChanged when arrowDown key is pressed', async () => {
-    const onCursorChanged = sinon.spy();
-    const onSuggestions = sinon.spy();
-    const wrapper = mount(<AlgoliaPlaces
-      onCursorChanged={onCursorChanged}
-      onSuggestions={onSuggestions}
-    />);
-
-    wrapper.find('input').instance().value = 'Huddinge';
-    wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
-
-    await waitUntil(() => onSuggestions.calledOnce, 'Waited for onSuggestion to have been called');
-    const keyboardEvent = new KeyboardEvent('keydown', { which: 40 });
-    wrapper.find('input').getDOMNode().dispatchEvent(keyboardEvent);
-
-    await waitUntil(() => onCursorChanged.called, 'Waited for onCursorChanged to have been called.');
-
-    expect(onCursorChanged.called).to.equal(true);
-  });
-
-  it('should call onChange when a suggestion is clicked', async () => {
-    const onChange = sinon.spy();
-    const onSuggestions = sinon.spy();
-    const wrapper = mount(<AlgoliaPlaces
-      onChange={onChange}
-      onSuggestions={onSuggestions}
-    />);
-
-    wrapper.find('input').instance().value = 'Huddinge';
-    wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
-
-    await waitUntil(() => onSuggestions.calledOnce, 'Waited for onSuggestion to have been called');
-    await waitUntil(() => wrapper.getDOMNode().querySelectorAll('.ap-suggestion').length > 0, 'Waited for suggestions');
-
-    wrapper.getDOMNode().querySelector('.ap-suggestion').dispatchEvent(new MouseEvent('click', {
-      bubbles: true,
-      cancelable: true,
-    }));
-
-    await waitUntil(() => onChange.called, 'Waited for onChange to have been called.');
-
-    const { suggestion, suggestionIndex } = onChange.firstCall.args[0];
-
-    expect(onChange.calledOnce).to.equal(true);
-    expect(suggestion === undefined).to.equal(false);
-    expect(suggestionIndex).to.equal(0);
-  });
-
-  xit('should call onClear when the input field gets empty', async () => {
-    const onClear = sinon.spy();
-    const onChange = sinon.spy();
-    const onSuggestions = sinon.spy();
-
-    const wrapper = mount(<AlgoliaPlaces
-      onChange={onChange}
-      onSuggestions={onSuggestions}
-      onClear={onClear}
-    />);
-
-    wrapper.find('input').instance().value = 'Huddinge';
-    wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
-    await waitUntil(() => onSuggestions.calledOnce, 'Waited for onSuggestion to have been called');
-
-    wrapper.find('input').getDOMNode().value = '';
-    wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
-
-    expect(onClear.calledOnce).to.equal(true);
-  });
-
-  it('should call onLimit when HTTP request to Algolia returns 489', async () => {
-    const onLimit = sinon.spy();
-
-    const fakeXhr = sinon.useFakeXMLHttpRequest();
-    let suggestionRequest;
-    fakeXhr.onCreate = (xhr) => { suggestionRequest = xhr; };
-
-    const wrapper = mount(<AlgoliaPlaces
-      onLimit={onLimit}
-    />);
-
-    wrapper.find('input').instance().value = 'Huddinge';
-    wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
-    suggestionRequest.respond(429, {}, JSON.stringify({}));
-
-    await waitUntil(() => onLimit.called);
-
-    expect(onLimit.calledOnce).to.equal(true);
-    expect(typeof onLimit.firstCall.args[0].message).to.equal('string');
-  });
-
-  it('should call onError when HTTP request returns bad status code', async () => {
-    const onError = sinon.spy();
-
-    const fakeXhr = sinon.useFakeXMLHttpRequest();
-    let suggestionRequest;
-    fakeXhr.onCreate = (xhr) => { suggestionRequest = xhr; };
-
-    const wrapper = mount(<AlgoliaPlaces
-      onError={onError}
-    />);
-
-    wrapper.find('input').instance().value = 'Huddinge';
-    wrapper.find('input').getDOMNode().dispatchEvent(new Event('input'));
-    suggestionRequest.respond(404, {}, JSON.stringify({}));
-
-    await waitUntil(() => onError.called);
-
-    expect(onError.calledOnce).to.equal(true);
-    expect(typeof onError.firstCall.args[0].message).to.equal('string');
   });
 });
