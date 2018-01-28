@@ -10,7 +10,8 @@ module.exports = {
     "jest/globals": true
   },
   "rules": {
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "indent": ["error", 2]
   },
   "overrides": {
     "files": ["*.test.js"],
