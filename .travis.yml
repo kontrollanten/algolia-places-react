@@ -1,0 +1,26 @@
+sudo: false
+language: node_js
+
+node_js:
+  - "8"
+
+cache:
+  - yarn: true
+
+install:
+  - yarn
+
+jobs:
+  include:
+    - stage: lint
+      script: yarn lint
+    - stage: unit
+      script: yarn test
+    - stage: deploy
+      script: echo "Deploying to npm ..."
+      deploy:
+        provider: npm
+        email: $NPM_PUBLISH_EMAIL
+        api_key: $NPM_PUBLISH_API_KEY
+        on:
+          tags: true
