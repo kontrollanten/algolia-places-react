@@ -15,7 +15,7 @@ jobs:
     - stage: lint
       script: yarn lint
     - stage: unit
-      script: yarn test
+      script: yarn test:ci
     - stage: deploy
       script: echo "Deploying to npm ..."
       deploy:
