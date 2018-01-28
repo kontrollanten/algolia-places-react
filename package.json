@@ -15,6 +15,15 @@
     "prepush": "yarn test",
     "publish": "yarn publish-please"
   },
+  "keywords": [
+    "geocoder",
+    "geocoding",
+    "geo",
+    "algolia",
+    "react",
+    "preact",
+    "component"
+  ],
   "peerDependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
