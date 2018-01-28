@@ -22,5 +22,6 @@ jobs:
         provider: npm
         email: $NPM_PUBLISH_EMAIL
         api_key: $NPM_PUBLISH_API_KEY
+        script: yarn publish
         on:
           tags: true

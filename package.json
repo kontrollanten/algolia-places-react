@@ -11,7 +11,8 @@
     "test": "jest",
     "lint": "eslint src",
     "precommit": "yarn lint",
-    "prepush": "yarn test"
+    "prepush": "yarn test",
+    "publish": "yarn publish-please"
   },
   "peerDependencies": {
     "react": "^16.2.0",
