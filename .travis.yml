@@ -21,6 +21,7 @@ jobs:
       before_deploy:
         - yarn build
       deploy:
+        skip_cleanup: true
         provider: npm
         email: $NPM_PUBLISH_EMAIL
         api_key: $NPM_PUBLISH_API_KEY
