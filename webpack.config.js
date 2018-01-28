@@ -6,7 +6,8 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js'
+    filename: 'index.js',
+    libraryTarget: 'commonjs2',
   },
 
   module: {
@@ -23,5 +24,8 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.RESET_APP_DATA_TIMER': JSON.stringify(''),
     }),
-  ]
+  ],
+  externals: {
+    'react': 'commonjs react' // this line is just to use the React dependency of our parent-testing-project instead of using our own React.
+  },
 };
