@@ -15,6 +15,9 @@
     "prepush": "yarn test",
     "publish": "yarn publish-please"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "geocoder",
     "geocoding",
