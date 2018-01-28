@@ -4,7 +4,7 @@
     "uncommittedChanges": false,
     "untrackedFiles": false,
     "sensitiveData": true,
-    "branch": "master",
+    "branch": "",
     "gitTag": true
   },
   "confirm": false,

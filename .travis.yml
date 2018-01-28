@@ -18,10 +18,11 @@ jobs:
       script: yarn test:ci
     - stage: deploy
       script: echo "Deploying to npm ..."
+      before_deploy:
+        - yarn build
       deploy:
         provider: npm
         email: $NPM_PUBLISH_EMAIL
         api_key: $NPM_PUBLISH_API_KEY
-        script: yarn build && yarn publish
         on:
           tags: true

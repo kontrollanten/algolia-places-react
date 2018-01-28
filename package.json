@@ -1,6 +1,6 @@
 {
   "name": "algolia-places-react",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React wrapper for Algolia Places geocoder",
   "main": "dist/index.js",
   "repository": "https://github.com/kontrollanten/algolia-places-react",
@@ -12,8 +12,7 @@
     "test:ci": "yarn snyk test && jest --coverage && codecov",
     "lint": "eslint src",
     "precommit": "yarn lint",
-    "prepush": "yarn test",
-    "publish": "yarn publish-please"
+    "prepush": "yarn test"
   },
   "files": [
     "dist"
