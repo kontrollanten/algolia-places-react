@@ -63,7 +63,7 @@ export default class AlgoliaPlaces extends React.Component {
       container: this.autocompleteElem,
     });
 
-    [
+    this.autocompleteListeners = [
       'onSuggestions',
       'onCursorChanged',
       'onChange',
@@ -72,10 +72,15 @@ export default class AlgoliaPlaces extends React.Component {
       'onError',
     ]
       .filter(prop => !!this.props[prop])
-      .map(prop => ({ prop, eventName: prop.substr(2).toLowerCase() }))
-      .forEach(({ prop, eventName }) => {
-        this.autocomplete.on(eventName, this.props[prop]);
-      });
+      .map(prop => ({ prop, eventName: prop.substr(2).toLowerCase() }));
+
+    this.autocompleteListeners
+      .forEach(({ prop, eventName }) => this.autocomplete.on(eventName, this.props[prop]));
+  }
+
+  componentWillUnmount() {
+    this.autocompleteListeners
+      .forEach(({ eventName }) => this.autocomplete.removeAllListeners(eventName));
   }
 
   render() {

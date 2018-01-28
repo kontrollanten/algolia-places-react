@@ -285,6 +285,26 @@ describe('AlgoliaPlaces', () => {
     expect(AlgoliaPlaces.prototype.componentDidMount.callCount).to.equal(1);
   });
 
+  it('should deattach event listeners upon unmount', () => {
+    const wrapper = mount(<AlgoliaPlaces
+      onSuggestions={sinon.spy()}
+      onCursorChanged={sinon.spy()}
+      onChange={sinon.spy()}
+      onClear={sinon.spy()}
+      onLimit={sinon.spy()}
+      onError={sinon.spy()}
+    />);
+    const { autocomplete, autocompleteListeners } = wrapper.instance();
+    sinon.spy(autocomplete, 'removeAllListeners');
+
+    wrapper.unmount();
+
+    autocompleteListeners
+      .forEach(({ eventName }) => {
+        expect(autocomplete.removeAllListeners.calledWith(eventName)).to.equal(true);
+      });
+  });
+
   it('should display default placeholder', () => {
     const wrapper = mount(<AlgoliaPlaces />);
 
