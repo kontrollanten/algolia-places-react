@@ -285,6 +285,14 @@ describe('AlgoliaPlaces', () => {
     expect(AlgoliaPlaces.prototype.componentDidMount.callCount).to.equal(1);
   });
 
+  it('should not re render upon receiving new props', () => {
+    sinon.spy(AlgoliaPlaces.prototype, 'render');
+    const wrapper = mount(<AlgoliaPlaces />);
+    wrapper.setProps({ placeholder: 'something' });
+
+    expect(AlgoliaPlaces.prototype.render.callCount).to.equal(1);
+  });
+
   it('should deattach event listeners upon unmount', () => {
     const wrapper = mount(<AlgoliaPlaces
       onSuggestions={sinon.spy()}

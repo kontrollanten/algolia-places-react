@@ -78,6 +78,10 @@ export default class AlgoliaPlaces extends React.Component {
       .forEach(({ prop, eventName }) => this.autocomplete.on(eventName, this.props[prop]));
   }
 
+  shouldComponentUpdate() {
+    return false;
+  }
+
   componentWillUnmount() {
     this.autocompleteListeners
       .forEach(({ eventName }) => this.autocomplete.removeAllListeners(eventName));
