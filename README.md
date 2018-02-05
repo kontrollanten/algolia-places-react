@@ -4,7 +4,7 @@ This package will make Algolia Places available as a React component. It's just 
 
 ## Installation
 ```
-npm install https://github.com/kontrollanten/algolia-places-react
+npm install algolia-places-react --save
 ```
 
 ## Usage
