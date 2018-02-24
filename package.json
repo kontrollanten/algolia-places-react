@@ -1,7 +1,7 @@
 {
   "name": "algolia-places-react",
   "version": "1.0.12",
-  "description": "React wrapper for Algolia Places geocoder",
+  "description": "Blazing fast address autocomplete React/preact component.",
   "main": "dist/index.js",
   "repository": "https://github.com/kontrollanten/algolia-places-react",
   "author": "kontrollanten",
