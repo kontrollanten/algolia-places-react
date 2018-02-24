@@ -2,6 +2,9 @@
 
 Blazing fast address autocomplete React/preact component. :zap:
 
+# Demo
+[Checkout the demo at https://address-autocomplete-react.netlify.com/](https://address-autocomplete-react.netlify.com/)
+
 ## Installation
 ```bash
 npm install algolia-places-react --save
