@@ -12,7 +12,7 @@
     "demo:build": "parcel build e2e/index.html -d demo --public-url /",
     "test": "jest",
     "test:ci": "yarn snyk test && jest --coverage && codecov",
-    "lint": "eslint src",
+    "lint": "eslint src e2e",
     "precommit": "yarn lint",
     "prepush": "yarn test"
   },
