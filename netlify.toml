@@ -1,0 +1,4 @@
+[build]
+  command = "yarn demo:build"
+  publish = "demo"
+  branch = "master"
