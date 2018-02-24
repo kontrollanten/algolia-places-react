@@ -4,6 +4,7 @@ import {
 	Code, 
   Flex,
 	Heading, 
+  Link,
   Panel,
 	Provider, 
 	Subhead,
@@ -106,21 +107,26 @@ export default class App extends React.Component {
 							onError={this.handleError}
 						/>
 
-              <Markdown
-                source={`
+            <Markdown
+              source={`
 \`\`\`js
-  <AlgoliaPlaces
-    placeholder='Write an address here'
-    onChange={this.handleChange}
-    onSuggestions={this.handleSuggestions}
-    onCursorChanged={this.handleCursorChanged}
-    onClear={this.handleClear}
-    onLimit={this.handleLimit}
-    onError={this.handleError}
-  />
+<AlgoliaPlaces
+  placeholder='Write an address here'
+  onChange={this.handleChange}
+  onSuggestions={this.handleSuggestions}
+  onCursorChanged={this.handleCursorChanged}
+  onClear={this.handleClear}
+  onLimit={this.handleLimit}
+  onError={this.handleError}
+/>
 \`\`\``
-                }
-              /> 
+              }
+            /> 
+
+              <Link href="https://github.com/kontrollanten/algolia-places-react" target="_blank">
+               Further documentation at GitHub
+              </Link>
+
 					</Box>
 					<Box width={2/3} px={2}>
 						<Subhead>Fired callbacks:</Subhead>
