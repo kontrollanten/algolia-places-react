@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Box,
+  Button,
   Flex,
   Heading,
   Link,
@@ -16,11 +17,26 @@ export default class App extends React.Component {
     super();
 
     this.addFiredCallback = this.addFiredCallback.bind(this);
+    this.handleReset = this.handleReset.bind(this);
   }
 
   state = {
+    enabled: true,
     firedCallbacks: [],
   };
+
+  handleReset() {
+    this.setState({
+      enabled: false,
+      firedCallbacks: [],
+    }, () => {
+      setTimeout(() => {
+        this.setState({
+          enabled: true,
+        });
+      }, 100);
+    });
+  }
 
   addFiredCallback({ name, args }) {
     this.setState({
@@ -47,10 +63,13 @@ export default class App extends React.Component {
         />
         </a>
         <Heading pb={40}>Algolia Places React component in action</Heading>
+
+        <Button onClick={this.handleReset} mb={20}>Reset</Button>
+
         <Flex mx={-2}>
           <Box width={1 / 3} px={2}>
             <Subhead>UI:</Subhead>
-            <Autocomplete onCallback={this.addFiredCallback} />
+            {this.state.enabled && <Autocomplete onCallback={this.addFiredCallback} />}
             <Markdown
               source={`
 \`\`\`js
