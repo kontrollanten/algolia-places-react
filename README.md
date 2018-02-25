@@ -3,6 +3,7 @@
 Blazing fast address autocomplete React/preact component. :zap:
 
 # Demo
+![Demo GIF](https://res.cloudinary.com/hilnmyskv/image/upload/f_auto,q_100/v1462192192/Algolia_Places_-_demo_country_v2_gsn2qq.gif)
 [Checkout the demo at https://address-autocomplete-react.netlify.com/](https://address-autocomplete-react.netlify.com/)
 
 ## Installation
