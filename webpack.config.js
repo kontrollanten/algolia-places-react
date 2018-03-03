@@ -15,8 +15,11 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /\test.js$/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
+        exclude: [
+          /node_modules/,
+          /\test.js$/,
+        ],
       },
       {
         /** Workaround while waiting for https://github.com/madrobby/zepto/pull/1319 */
@@ -37,7 +40,7 @@ module.exports = {
               },
             }
           ]
-        })
+        }),
       }
     ]
   },
