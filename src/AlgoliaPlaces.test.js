@@ -214,7 +214,7 @@ describe('AlgoliaPlaces', () => {
       expect(suggestionIndex).to.equal(0);
     });
 
-    xit('should call onClear when the input field gets empty', async () => {
+    it('should call onClear when the input field gets empty', async () => {
       const onClear = sinon.spy();
       const onChange = sinon.spy();
       const onSuggestions = sinon.spy();
