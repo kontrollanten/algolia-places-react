@@ -26,6 +26,15 @@ export default () => {
     <AlgoliaPlaces
       placeholder='Write an address here'
 
+      options={{
+        appId: 'my-app-id',
+        apiKey: 'sharing-is-caring',
+        language: 'sv',
+        countries: ['se'],
+        type: 'city',
+        // Other options from https://community.algolia.com/places/documentation.html#options
+      }}
+
       onChange={({ query, rawAnswer, suggestion, suggestionIndex }) => 
         console.log('Fired when suggestion selected in the dropdown or hint was validated.')}
 

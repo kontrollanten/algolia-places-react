@@ -214,7 +214,7 @@ describe('AlgoliaPlaces', () => {
       expect(suggestionIndex).to.equal(0);
     });
 
-    xit('should call onClear when the input field gets empty', async () => {
+    it('should call onClear when the input field gets empty', async () => {
       const onClear = sinon.spy();
       const onChange = sinon.spy();
       const onSuggestions = sinon.spy();
@@ -324,5 +324,12 @@ describe('AlgoliaPlaces', () => {
     const wrapper = mount(<AlgoliaPlaces placeholder={placeholder} />);
 
     expect(wrapper.find('input').prop('placeholder')).to.equal(placeholder);
+  });
+
+  it('should use placeholder value for aria-label', () => {
+    const placeholder = 'my place';
+    const wrapper = mount(<AlgoliaPlaces placeholder={placeholder} />);
+
+    expect(wrapper.find('input').prop('aria-label')).to.equal(placeholder);
   });
 });

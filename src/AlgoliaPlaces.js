@@ -93,6 +93,7 @@ export default class AlgoliaPlaces extends React.Component {
         <input
           placeholder={this.props.placeholder}
           type="text"
+          aria-label={this.props.placeholder}
           ref={(ref) => { this.autocompleteElem = ref; }}
         />
       </div>
