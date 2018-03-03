@@ -4,15 +4,23 @@ import Places from 'places.js';
 
 export default class AlgoliaPlaces extends React.Component {
   static propTypes = {
+    /** Placeholder for input field. */
     placeholder: PropTypes.string,
     /* eslint-disable react/no-unused-prop-types */
+    /** https://community.algolia.com/places/documentation.html#api-events-cursorchanged */
     onCursorChanged: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-suggestions */
     onSuggestions: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-change */
     onChange: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-clear */
     onClear: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-limit */
     onLimit: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-error */
     onError: PropTypes.func,
     /* eslint-enable react/no-unused-prop-types */
+    /** https://community.algolia.com/places/documentation.html#options */
     options: PropTypes.shape({
       type: PropTypes.oneOf([
         'city',
