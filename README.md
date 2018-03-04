@@ -3,8 +3,8 @@
 Blazing fast address autocomplete React/preact component. :zap:
 
 # Demo
-![Demo GIF](https://raw.githubusercontent.com/kontrollanten/algolia-places-react/master/algolia-places-react.gif)
 [Checkout the demo at https://address-autocomplete-react.netlify.com/](https://address-autocomplete-react.netlify.com/)
+![Demo GIF](https://raw.githubusercontent.com/kontrollanten/algolia-places-react/master/algolia-places-react.gif)
 
 ## Installation
 ```bash
@@ -56,8 +56,7 @@ export default () => {
   );  
 }
 ```
-
-Read more at [Algolia Places site](https://community.algolia.com/places/documentation.html)
+[Full API documentation](https://address-autocomplete-react.netlify.com/api)
 
 ## Todo
 Implement support for using [Places methods](https://community.algolia.com/places/documentation.html#methods)
