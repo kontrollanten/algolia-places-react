@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "places.js": "^1.4.18",
+    "places.js": "^1.5",
     "prop-types": "^15.6.0"
   }
 }
