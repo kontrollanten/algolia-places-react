@@ -5,6 +5,7 @@ const StringReplacePlugin = require('string-replace-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   mode: 'production',
+  devtool: 'source-map',
 
   output: {
     path: path.resolve(__dirname, 'dist'),
