@@ -1,4 +1,4 @@
 [build]
-  command = "yarn demo:build"
-  publish = "demo"
+  command = "yarn demo:build && yarn styleguide:build"
+  publish = "docs"
   branch = "master"

@@ -9,7 +9,7 @@
   "scripts": {
     "build": "webpack",
     "demo": "parcel e2e/index.html",
-    "demo:build": "parcel build e2e/index.html -d demo --public-url /",
+    "demo:build": "parcel build e2e/index.html -d docs --public-url /",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test": "jest",

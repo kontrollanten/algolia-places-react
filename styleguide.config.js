@@ -3,4 +3,5 @@ module.exports = {
   webpackConfig: require('./webpack.config.js'),
   showSidebar: false,
   showUsage: true,
+  styleguideDir: 'docs/api',
 }

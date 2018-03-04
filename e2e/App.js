@@ -86,8 +86,8 @@ export default class App extends React.Component {
               }
             />
 
-            <Link href="https://github.com/kontrollanten/algolia-places-react" target="_blank">
-      Further documentation at GitHub
+            <Link href="/api">
+      Read API documentation here
             </Link>
 
           </Box>
