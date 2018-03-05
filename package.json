@@ -61,7 +61,7 @@
     "react-dom": "^16.2.0",
     "react-json-view": "^1.16.0",
     "react-markdown": "^3.2.1",
-    "react-styleguidist": "^6.2.5",
+    "react-styleguidist": "https://github.com/boazhoch/react-styleguidist#c2dddddaf768872a635d0804a166947af4a3e5aa",
     "rebass": "^2.0.0-0",
     "sinon": "^4.2.1",
     "sinon-chai": "^2.14.0",
