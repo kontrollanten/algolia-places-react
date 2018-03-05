@@ -6708,9 +6708,9 @@ pkgd@^1.1.2:
     normalize-path "^2.0.1"
     pinkie-promise "^2.0.1"
 
-places.js@^1.5:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.5.0.tgz#f5631d6d69f29449cf178fc726d4359125fdfae1"
+places.js@^1.6:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.6.0.tgz#0fddc485e271eee04103212fb6d0f8b9b1e5b358"
   dependencies:
     algoliasearch "^3.24.0"
     autocomplete.js "^0.28.2"
