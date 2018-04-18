@@ -58,5 +58,9 @@ export default () => {
 ```
 [Full API documentation](https://address-autocomplete-react.netlify.com/api)
 
+## Live examples
+* [Hitta skyddsrum](https://hittaskyddsrum.se)
+
 ## Todo
-Implement support for using [Places methods](https://community.algolia.com/places/documentation.html#methods)
+* Implement support for using [Places methods](https://community.algolia.com/places/documentation.html#methods)
+* Investigate using [react-autocomplete](https://github.com/reactjs/react-autocomplete) instead. For smaller bundle and VDOM usage.
