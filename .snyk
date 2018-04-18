@@ -1,9 +1,34 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.10.2
+version: v1.11.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:shelljs:20140723':
     - '*':
-        reason: https://github.com/shelljs/shelljs/issues/766
+        reason: 'https://github.com/shelljs/shelljs/issues/766'
         expires: 2018-04-04T13:36:46.058Z
+  'npm:hoek:20180212':
+    - node-pre-gyp > hawk > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
+    - node-pre-gyp > request > hawk > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
+    - node-pre-gyp > hawk > boom > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
+    - node-pre-gyp > request > hawk > boom > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
+    - node-pre-gyp > hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
+    - node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
+    - node-pre-gyp > hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
+    - node-pre-gyp > request > hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-05-18T20:12:01.806Z'
 patch: {}
