@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.11.0
+version: v1.12.0
 # ignores vulnerabilities until expiry date; change duration by modifying expiry date
 ignore:
   'npm:shelljs:20140723':
@@ -9,26 +9,85 @@ ignore:
   'npm:hoek:20180212':
     - node-pre-gyp > hawk > hoek:
         reason: None given
-        expires: '2018-05-18T20:12:01.806Z'
+        expires: '2018-07-04T19:56:50.406Z'
     - node-pre-gyp > request > hawk > hoek:
         reason: None given
         expires: '2018-05-18T20:12:01.806Z'
+      node-pre-gyp > hawk > boom > hoek:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
     - node-pre-gyp > hawk > boom > hoek:
         reason: None given
         expires: '2018-05-18T20:12:01.806Z'
+      node-pre-gyp > hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
     - node-pre-gyp > request > hawk > boom > hoek:
         reason: None given
         expires: '2018-05-18T20:12:01.806Z'
+      node-pre-gyp > hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
     - node-pre-gyp > hawk > cryptiles > boom > hoek:
         reason: None given
         expires: '2018-05-18T20:12:01.806Z'
+      node-pre-gyp > request > hawk > hoek:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
     - node-pre-gyp > request > hawk > cryptiles > boom > hoek:
         reason: None given
         expires: '2018-05-18T20:12:01.806Z'
+      node-pre-gyp > request > hawk > boom > hoek:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
     - node-pre-gyp > hawk > sntp > hoek:
         reason: None given
         expires: '2018-05-18T20:12:01.806Z'
+      node-pre-gyp > request > hawk > sntp > hoek:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
     - node-pre-gyp > request > hawk > sntp > hoek:
         reason: None given
         expires: '2018-05-18T20:12:01.806Z'
+      node-pre-gyp > request > hawk > cryptiles > boom > hoek:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
+  'npm:ua-parser-js:20180227':
+    - prop-types > fbjs > ua-parser-js:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+    - react > fbjs > ua-parser-js:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+    - react > prop-types > fbjs > ua-parser-js:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+    - react-dom > fbjs > ua-parser-js:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+    - react-dom > prop-types > fbjs > ua-parser-js:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+    - react-dom > react > fbjs > ua-parser-js:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+    - react-dom > react > prop-types > fbjs > ua-parser-js:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+  'npm:deep-extend:20180409':
+    - node-pre-gyp > rc > deep-extend:
+        reason: None given
+        expires: '2018-07-04T19:56:50.406Z'
+  'npm:macaddress:20180511':
+    - places.js > algolia-aerial > css-loader > cssnano > postcss-filter-plugins > uniqid > macaddress:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
+  'npm:mime:20170907':
+    - places.js > algolia-aerial > url-loader > mime:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
+  'npm:stringstream:20180511':
+    - node-pre-gyp > request > stringstream:
+        reason: None given
+        expires: '2018-07-04T19:56:50.407Z'
 patch: {}
