@@ -20,6 +20,8 @@ export default class AlgoliaPlaces extends React.Component {
     /** https://community.algolia.com/places/documentation.html#api-events-error */
     onError: PropTypes.func,
     /* eslint-enable react/no-unused-prop-types */
+    onBlur: PropTypes.func,
+    onFocus: PropTypes.func,
     /** https://community.algolia.com/places/documentation.html#options */
     options: PropTypes.shape({
       type: PropTypes.oneOf([
@@ -56,10 +58,12 @@ export default class AlgoliaPlaces extends React.Component {
 
   static defaultProps = {
     placeholder: 'Type an address',
+    onBlur: () => undefined,
     onCursorChanged: null,
     onSuggestions: null,
     onChange: null,
     onClear: null,
+    onFocus: () => undefined,
     onLimit: null,
     onError: null,
     options: {},
@@ -103,6 +107,8 @@ export default class AlgoliaPlaces extends React.Component {
           type="text"
           aria-label={this.props.placeholder}
           ref={(ref) => { this.autocompleteElem = ref; }}
+          onBlur={this.props.onBlur}
+          onFocus={this.props.onFocus}
         />
       </div>
     );
