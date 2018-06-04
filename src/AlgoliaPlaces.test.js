@@ -276,6 +276,28 @@ describe('AlgoliaPlaces', () => {
       expect(onError.calledOnce).to.equal(true);
       expect(typeof onError.firstCall.args[0].message).to.equal('string');
     });
+
+    it('should call onBlur when input elem gets focused', () => {
+      const onBlur = sinon.spy();
+      const wrapper = mount(<AlgoliaPlaces
+        onBlur={onBlur}
+      />);
+
+      wrapper.find('input').simulate('blur');
+
+      expect(onBlur.calledOnce).to.equal(true);
+    });
+
+    it('should call onFocus when input elem gets focused', () => {
+      const onFocus = sinon.spy();
+      const wrapper = mount(<AlgoliaPlaces
+        onFocus={onFocus}
+      />);
+
+      wrapper.find('input').simulate('focus');
+
+      expect(onFocus.calledOnce).to.equal(true);
+    });
   });
 
   it('should only mount once', () => {
