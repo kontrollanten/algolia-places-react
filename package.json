@@ -1,6 +1,6 @@
 {
   "name": "algolia-places-react",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Blazing fast address autocomplete React/preact component.",
   "main": "dist/index.js",
   "repository": "https://github.com/kontrollanten/algolia-places-react",
