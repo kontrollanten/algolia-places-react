@@ -277,26 +277,13 @@ describe('AlgoliaPlaces', () => {
       expect(typeof onError.firstCall.args[0].message).to.equal('string');
     });
 
-    it('should call onBlur when input elem gets focused', () => {
-      const onBlur = sinon.spy();
+    it('should pass arbitrary props to input element', () => {
+      const arbitrary = 'some random prop';
       const wrapper = mount(<AlgoliaPlaces
-        onBlur={onBlur}
+        arbitrary={arbitrary}
       />);
 
-      wrapper.find('input').simulate('blur');
-
-      expect(onBlur.calledOnce).to.equal(true);
-    });
-
-    it('should call onFocus when input elem gets focused', () => {
-      const onFocus = sinon.spy();
-      const wrapper = mount(<AlgoliaPlaces
-        onFocus={onFocus}
-      />);
-
-      wrapper.find('input').simulate('focus');
-
-      expect(onFocus.calledOnce).to.equal(true);
+      expect(wrapper.prop('arbitrary')).to.equal(arbitrary);
     });
   });
 
