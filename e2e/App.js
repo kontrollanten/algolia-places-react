@@ -76,11 +76,12 @@ export default class App extends React.Component {
   <AlgoliaPlaces
     placeholder='Write an address here'
     onChange={this.handleChange}
-    onSuggestions={this.handleSuggestions}
-    onCursorChanged={this.handleCursorChanged}
     onClear={this.handleClear}
-    onLimit={this.handleLimit}
+    onCursorChanged={this.handleCursorChanged}
     onError={this.handleError}
+    onFocus={this.handleFocus}
+    onLimit={this.handleLimit}
+    onSuggestions={this.handleSuggestions}
   />
   \`\`\``
               }
