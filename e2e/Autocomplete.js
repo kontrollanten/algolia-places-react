@@ -51,10 +51,18 @@ const Autocomplete = ({ onCallback }) => {
     console.log('Fired when we could not make the request to Algolia Places servers for any reason but reaching your rate limit.');
   };
 
+  const handleFocus = (data) => {
+    onCallback({
+      name: 'onFocus',
+      args: data,
+    });
+  };
+
   return (
     <AlgoliaPlaces
       placeholder="Write an address here"
       onChange={handleChange}
+      onFocus={handleFocus}
       onSuggestions={handleSuggestions}
       onCursorChanged={handleCursorChanged}
       onClear={handleClear}
