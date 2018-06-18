@@ -56,7 +56,6 @@
     "husky": "^0.14.3",
     "jest-cli": "^22.1.4",
     "parcel-bundler": "^1.6.2",
-    "publish-please": "^3.0.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-json-view": "^1.16.0",
