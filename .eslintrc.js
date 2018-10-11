@@ -11,7 +11,8 @@ module.exports = {
   },
   "rules": {
     "react/jsx-filename-extension": 0,
-    "indent": ["error", 2]
+    "indent": ["error", 2],
+    "react/destructuring-assignment": 0,
   },
   "overrides": {
     "files": ["*.test.js"],

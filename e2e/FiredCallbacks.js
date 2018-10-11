@@ -19,12 +19,14 @@ const FiredCallbacks = ({ callbacks }) => (
           >
             {cb.name}
           </Panel.Header>
-          {cb.args && <JsonView
-            src={cb.args}
-            collapsed={1}
-            name={false}
-            enableClipboard={false}
-          />}
+          {cb.args && (
+            <JsonView
+              src={cb.args}
+              collapsed={1}
+              name={false}
+              enableClipboard={false}
+            />
+          )}
         </Panel>
       ))}
   </div>
