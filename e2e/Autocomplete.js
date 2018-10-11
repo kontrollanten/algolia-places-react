@@ -77,4 +77,3 @@ Autocomplete.propTypes = {
 };
 
 export default Autocomplete;
-

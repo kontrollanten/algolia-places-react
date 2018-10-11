@@ -32,8 +32,8 @@ export default class AlgoliaPlaces extends React.Component {
       ]),
       countries: PropTypes.arrayOf((propValue, key, componentName, location, propFullName) => {
         if (propValue[key].length !== 2) {
-          return new Error(`Invalid prop \`${propFullName}\` supplied to` +
-            ` \`${componentName}\`. Validation failed.`);
+          return new Error(`Invalid prop \`${propFullName}\` supplied to`
+            + ` \`${componentName}\`. Validation failed.`);
         }
         return true;
       }),
