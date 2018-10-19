@@ -2115,9 +2115,9 @@ commander@~2.17.1:
   version "2.17.1"
   resolved "https://registry.npmjs.org/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
 
-commitizen@3.0.2:
-  version "3.0.2"
-  resolved "https://registry.npmjs.org/commitizen/-/commitizen-3.0.2.tgz#8af8d943c9b97a6a9523d824c654660a43138179"
+commitizen@3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/commitizen/-/commitizen-3.0.3.tgz#8a5f43f91313e328d42872582d7cb427281841cb"
   dependencies:
     cachedir "2.1.0"
     cz-conventional-changelog "2.1.0"
@@ -2131,6 +2131,7 @@ commitizen@3.0.2:
     lodash "4.17.11"
     minimist "1.2.0"
     shelljs "0.7.6"
+    strip-bom "3.0.0"
     strip-json-comments "2.0.1"
 
 common-dir@^2.0.2:
