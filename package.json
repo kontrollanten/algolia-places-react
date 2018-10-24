@@ -14,10 +14,11 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test": "snyk test && jest",
-    "test:ci": "yarn snyk test && jest --coverage && codecov",
+    "test:ci": "jest --coverage && codecov",
     "lint": "eslint src e2e",
     "precommit": "yarn lint",
-    "prepush": "yarn test"
+    "prepush": "yarn test",
+    "vuln:ci": "yarn snyk test && yarn snyk monitor"
   },
   "files": [
     "dist"

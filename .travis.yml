@@ -12,6 +12,8 @@ install:
 
 jobs:
   include:
+    - stage: vulnerabilities
+      script: yarn vuln:ci
     - stage: lint
       script: yarn lint
     - stage: unit
