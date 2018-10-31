@@ -67,7 +67,7 @@
     "react-markdown": "4.0.3",
     "react-styleguidist": "^7.0.6",
     "rebass": "^2.0.0-0",
-    "sinon": "7.1.0",
+    "sinon": "7.1.1",
     "sinon-chai": "^3.0.0",
     "snyk": "1.105.0",
     "string-replace-webpack-plugin": "^0.1.3",
