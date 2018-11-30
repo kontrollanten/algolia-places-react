@@ -64,7 +64,7 @@
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-json-view": "^1.16.0",
-    "react-markdown": "4.0.3",
+    "react-markdown": "4.0.4",
     "react-styleguidist": "^7.0.6",
     "rebass": "^2.0.0-0",
     "sinon": "7.1.1",
