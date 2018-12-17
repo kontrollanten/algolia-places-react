@@ -13,6 +13,10 @@ module.exports = {
     libraryTarget: 'commonjs2',
   },
 
+  optimization: {
+    minimize: process.env.MINIMIZE === 'true'
+  },
+
   module: {
     rules: [
       {
