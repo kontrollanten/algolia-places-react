@@ -13,7 +13,7 @@ install:
 jobs:
   include:
     - stage: vulnerabilities
-      script: yarn vuln:ci
+      script: yarn snyk test
     - stage: lint
       script: yarn lint
     - stage: unit
@@ -29,3 +29,6 @@ jobs:
         api_key: $NPM_PUBLISH_API_KEY
         on:
           tags: true
+
+after_deploy:
+  - yarn snyk monitor
