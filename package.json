@@ -18,8 +18,7 @@
     "test:ci": "jest --coverage && codecov",
     "lint": "eslint src e2e",
     "precommit": "yarn lint",
-    "prepush": "yarn test",
-    "vuln:ci": "yarn snyk test && yarn snyk monitor"
+    "prepush": "yarn test"
   },
   "files": [
     "dist"
