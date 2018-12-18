@@ -60,7 +60,7 @@
     "eslint-plugin-react": "^7.6.0",
     "husky": "1.2.1",
     "jest-cli": "23.6.0",
-    "parcel-bundler": "1.10.3",
+    "parcel-bundler": "1.11.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-json-view": "^1.16.0",
