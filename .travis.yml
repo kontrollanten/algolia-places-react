@@ -22,6 +22,7 @@ jobs:
       script: echo "Deploying to npm ..."
       before_deploy:
         - yarn build
+        - yarn build:es
       deploy:
         skip_cleanup: true
         provider: npm
