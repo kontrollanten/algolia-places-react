@@ -8995,9 +8995,9 @@ snyk-config@2.2.0:
     lodash "^4.17.5"
     nconf "^0.10.0"
 
-snyk-docker-plugin@1.21.2:
-  version "1.21.2"
-  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.21.2.tgz#dc6b6aba56e227d5d1d870903c8c2e77594fcc1d"
+snyk-docker-plugin@1.21.3:
+  version "1.21.3"
+  resolved "https://registry.yarnpkg.com/snyk-docker-plugin/-/snyk-docker-plugin-1.21.3.tgz#ec6baec00ccd29ca32975d2ed4b0c4571a08bc8b"
   dependencies:
     debug "^3"
     dockerfile-ast "0.0.12"
@@ -9122,9 +9122,9 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@1.127.0:
-  version "1.127.0"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.127.0.tgz#750d5f922cf455f4a0faf5c58263d796976fd4c3"
+snyk@1.130.0:
+  version "1.130.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.130.0.tgz#9038b26e8aaf26a82dec4303b700fe5837b4fe08"
   dependencies:
     "@snyk/dep-graph" "1.1.2"
     "@snyk/gemfile" "1.1.0"
@@ -9145,7 +9145,7 @@ snyk@1.127.0:
     recursive-readdir "^2.2.2"
     semver "^5.5.0"
     snyk-config "2.2.0"
-    snyk-docker-plugin "1.21.2"
+    snyk-docker-plugin "1.21.3"
     snyk-go-plugin "1.6.1"
     snyk-gradle-plugin "2.1.3"
     snyk-module "1.9.1"
