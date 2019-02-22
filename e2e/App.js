@@ -5,9 +5,8 @@ import {
   Flex,
   Heading,
   Link,
-  Provider,
-  Subhead,
 } from 'rebass';
+import { ThemeProvider } from 'styled-components';
 import Markdown from 'react-markdown';
 import FiredCallbacks from './FiredCallbacks';
 import Autocomplete from './Autocomplete';
@@ -52,27 +51,28 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <Provider>
-        <a href="https://github.com/kontrollanten/algolia-places-react">
-          <img
-            style={{
-              position: 'absolute', top: 0, right: 0, border: 0,
-            }}
-            src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
-            alt="Fork me on GitHub"
-            data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
-          />
-        </a>
-        <Heading pb={40}>Algolia Places React component in action</Heading>
+      <ThemeProvider theme={{ main: 'mediumseagreen' }}>
+        <React.Fragment>
+          <a href="https://github.com/kontrollanten/algolia-places-react">
+            <img
+              style={{
+                position: 'absolute', top: 0, right: 0, border: 0,
+              }}
+              src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
+              alt="Fork me on GitHub"
+              data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png"
+            />
+          </a>
+          <Heading pb={40}>Algolia Places React component in action</Heading>
 
-        <Button onClick={this.handleReset} mb={20}>Reset</Button>
+          <Button onClick={this.handleReset} mb={20}>Reset</Button>
 
-        <Flex mx={-2}>
-          <Box width={1 / 3} px={2}>
-            <Subhead>UI:</Subhead>
-            {this.state.enabled && <Autocomplete onCallback={this.addFiredCallback} />}
-            <Markdown
-              source={`
+          <Flex mx={-2}>
+            <Box width={1 / 3} px={2}>
+              <Heading fontSize={3} style={{ marginBottom: '10px' }}>UI</Heading>
+              {this.state.enabled && <Autocomplete onCallback={this.addFiredCallback} />}
+              <Markdown
+                source={`
 \`\`\`js
   <AlgoliaPlaces
     placeholder='Write an address here'
@@ -85,19 +85,20 @@ export default class App extends React.Component {
     onSuggestions={this.handleSuggestions}
   />
   \`\`\``
-              }
-            />
+                }
+              />
 
-            <Link href="/api">
+              <Link href="/api">
       Read API documentation here
-            </Link>
+              </Link>
 
-          </Box>
-          <Box width={2 / 3} px={2}>
-            <FiredCallbacks callbacks={this.state.firedCallbacks} />
-          </Box>
-        </Flex>
-      </Provider>
+            </Box>
+            <Box width={2 / 3} px={2}>
+              <FiredCallbacks callbacks={this.state.firedCallbacks} />
+            </Box>
+          </Flex>
+        </React.Fragment>
+      </ThemeProvider>
     );
   }
 }
