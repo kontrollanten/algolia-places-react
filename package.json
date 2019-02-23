@@ -16,13 +16,13 @@
     "styleguide:build": "styleguidist build",
     "test": "snyk test && jest",
     "test:ci": "jest --coverage && codecov",
-    "lint": "eslint src e2e",
-    "precommit": "yarn lint",
-    "prepush": "yarn test"
+    "lint": "eslint src e2e"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn test"
     }
   },
   "files": [
