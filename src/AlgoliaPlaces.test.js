@@ -27,6 +27,15 @@ const waitUntil = (callback, errorMessage) => new Promise((resolve, reject) => {
 });
 
 describe('AlgoliaPlaces', () => {
+  describe('init', () => {
+    it('should set placeholder as aria-label', () => {
+      const placeholder = 'Tjenare!';
+      const wrapper = mount(<AlgoliaPlaces placeholder={placeholder} />);
+
+      expect(wrapper.find('input').props()['aria-label']).to.equal(placeholder);
+    });
+  });
+
   describe('validation', () => {
     beforeAll(() => {
       sinon.stub(console, 'error');
