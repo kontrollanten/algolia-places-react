@@ -12,6 +12,8 @@ install:
 
 jobs:
   include:
+    - stage: commitlint
+      script: yarn commitlint-travis
     - stage: vulnerabilities
       script: yarn snyk test
     - stage: lint
