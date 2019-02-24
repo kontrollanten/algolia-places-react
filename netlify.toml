@@ -1,4 +1,5 @@
 [build]
+  build = "yarn --frozen-lockfile"
   command = "yarn demo:build && yarn styleguide:build"
   publish = "docs"
   branch = "master"

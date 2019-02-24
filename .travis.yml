@@ -8,7 +8,7 @@ cache:
   - yarn: true
 
 install:
-  - yarn
+  - yarn --frozen-lockfile
 
 jobs:
   include:
