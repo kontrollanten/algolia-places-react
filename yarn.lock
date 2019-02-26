@@ -808,7 +808,7 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@commitlint/cli@^7.5.2":
+"@commitlint/cli@7.5.2", "@commitlint/cli@^7.5.2":
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-7.5.2.tgz#2475cd8f7ed3b2f9c2ab96c06bc24d61d23f8716"
   integrity sha512-UQdW/wNb+XeANoYYLyuKEDIfWKSzdhJkPQZ8ie/IjfMNnsP+B23bkX4Ati+6U8zgz0yyngoxWl+3lfExiIL4hQ==
@@ -825,7 +825,7 @@
     resolve-from "4.0.0"
     resolve-global "0.1.0"
 
-"@commitlint/config-conventional@^7.5.0":
+"@commitlint/config-conventional@7.5.0":
   version "7.5.0"
   resolved "https://registry.yarnpkg.com/@commitlint/config-conventional/-/config-conventional-7.5.0.tgz#3afd4e3e34e5c2f6ec6af03e78ae924fed883ce7"
   integrity sha512-odLgBfQ5xntFAmMfAmDY2C4EWhW+cSTbvbsRS7seb55DCa3IaxxSHHC9eXrR+hN/BdUT5vqAxdX1PkR996sq9Q==
@@ -939,7 +939,7 @@
   dependencies:
     find-up "^2.1.0"
 
-"@commitlint/travis-cli@^7.5.2":
+"@commitlint/travis-cli@7.5.2":
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/@commitlint/travis-cli/-/travis-cli-7.5.2.tgz#f82ca57296eb913b6557124b80eac9773dcbbf1d"
   integrity sha512-kbkn8TIjRtGWcKOJBM/fbT9yRPjbLTybetRH5mkAQdX9ratkV9+N3akaOSmv5eemNfHsOM1cdrWkcjZbSqZV2A==
