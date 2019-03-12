@@ -54,7 +54,7 @@
     "@commitlint/travis-cli": "7.5.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
-    "babel-jest": "24.4.0",
+    "babel-jest": "24.5.0",
     "babel-loader": "8.0.5",
     "chai": "4.2.0",
     "codecov": "3.2.0",
