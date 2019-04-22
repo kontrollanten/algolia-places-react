@@ -10582,13 +10582,23 @@ snyk-docker-plugin@1.22.1:
     semver "^5.6.0"
     tslib "^1"
 
-snyk-go-plugin@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.npmjs.org/snyk-go-plugin/-/snyk-go-plugin-1.6.1.tgz#fad24de943a587d676af9408e5b3976d6b20267d"
+snyk-go-parser@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/snyk-go-parser/-/snyk-go-parser-1.0.2.tgz#7f60455b5af9407ad06ddc310d4a139300545646"
+  integrity sha512-vQfrPecK3j5JYwEI5lO0Gsy+QvFN2dHusGecmiXYpQPiyn1QLnYFTBxFIu94buxlxdKtujYkR/lA4dB82LJ8Lw==
   dependencies:
+    toml "^3.0.0"
+    tslib "^1.9.3"
+
+snyk-go-plugin@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/snyk-go-plugin/-/snyk-go-plugin-1.7.0.tgz#b69e12f04204eae73b243b4a52dd8f9ac2eaa8e9"
+  integrity sha512-4gGWFiilx3BINIqVau/GGhyOin5Vf0qzL5VYKV3FeZdJ22RBxqO3+NjRwsOzDJdIEgixp+NGV2hnuSKQCGsr9A==
+  dependencies:
+    debug "^4.1.1"
     graphlib "^2.1.1"
+    snyk-go-parser "1.0.2"
     tmp "0.0.33"
-    toml "^2.3.2"
 
 snyk-gradle-plugin@2.7.1:
   version "2.7.1"
@@ -10716,10 +10726,10 @@ snyk-try-require@1.3.1, snyk-try-require@^1.1.1, snyk-try-require@^1.3.1:
     lru-cache "^4.0.0"
     then-fs "^2.0.0"
 
-snyk@1.151.2:
-  version "1.151.2"
-  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.151.2.tgz#f97fde670ececf056cce9954f743c8567992be91"
-  integrity sha512-SLkNuossK94e6mci4ryBPpeTZLh2oyKO/uOKH1jVoReMTUaKJ9RqZxvApCKlrkziUBPWD11MJIQ1FSY915yptQ==
+snyk@1.152.0:
+  version "1.152.0"
+  resolved "https://registry.yarnpkg.com/snyk/-/snyk-1.152.0.tgz#7b8cc2285c14c6ea85180d169a0c9576bdbb4ed6"
+  integrity sha512-H5GkFQBphBH8biYvGYBEaFkDy/17D0Kko4KetGq+exAnjdANLWU5uTYQkjXYiYKlgHzRhSm7ZdEFL15WjovImw==
   dependencies:
     "@snyk/dep-graph" "1.4.1"
     "@snyk/gemfile" "1.2.0"
@@ -10740,7 +10750,7 @@ snyk@1.151.2:
     semver "^6.0.0"
     snyk-config "^2.2.1"
     snyk-docker-plugin "1.22.1"
-    snyk-go-plugin "1.6.1"
+    snyk-go-plugin "1.7.0"
     snyk-gradle-plugin "2.7.1"
     snyk-module "1.9.1"
     snyk-mvn-plugin "2.0.1"
@@ -11508,9 +11518,10 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-toml@^2.3.2:
-  version "2.3.3"
-  resolved "https://registry.npmjs.org/toml/-/toml-2.3.3.tgz#8d683d729577cb286231dfc7a8affe58d31728fb"
+toml@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/toml/-/toml-3.0.0.tgz#342160f1af1904ec9d204d03a5d61222d762c5ee"
+  integrity sha512-y/mWCZinnvxjTKYhJ+pYxwD0mRLVvOtdS2Awbgxln6iEnt4rk0yBxeSBHkGJcPucRiG0e55mwWp+g/05rsrd6w==
 
 tough-cookie@>=2.3.3, tough-cookie@^2.3.4:
   version "2.5.0"
