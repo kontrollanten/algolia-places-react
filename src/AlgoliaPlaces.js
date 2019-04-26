@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Places from 'places.js';
+
+// Skip during SSR; autocomplete/zepto.js attempts to access `window` on import
+/* eslint-disable global-require */
+const Places = (typeof window !== 'undefined') && require('places.js');
 
 export default class AlgoliaPlaces extends React.Component {
   static propTypes = {
@@ -65,6 +68,8 @@ export default class AlgoliaPlaces extends React.Component {
   };
 
   componentDidMount() {
+    if (!Places) return;
+
     this.autocomplete = Places({
       ...this.props.options,
       container: this.autocompleteElem,
@@ -90,8 +95,10 @@ export default class AlgoliaPlaces extends React.Component {
   }
 
   componentWillUnmount() {
-    this.autocompleteListeners
-      .forEach(({ eventName }) => this.autocomplete.removeAllListeners(eventName));
+    if (this.autocomplete) {
+      this.autocompleteListeners
+        .forEach(({ eventName }) => this.autocomplete.removeAllListeners(eventName));
+    }
   }
 
   render() {
