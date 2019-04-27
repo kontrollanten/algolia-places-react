@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Skip during SSR; autocomplete/zepto.js attempts to access `window` on import
 /* eslint-disable global-require */
 const Places = (typeof window !== 'undefined') && require('places.js');
 

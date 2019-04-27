@@ -2,7 +2,6 @@ import React from 'react';
 import { expect } from 'chai';
 import { renderToString } from 'react-dom/server';
 
-// SSR tests must be in separate module which does not import AngoliaPlaces into global scope
 describe('AlgoliaPlaces', () => {
   describe('SSR', () => {
     let originalWindow;
