@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.1](https://github.com/kontrollanten/algolia-places-react/compare/v1.4.0...v1.4.1) (2019-04-27)
+
+
+### Bug Fixes
+
+* **deps:** update dependency places.js to v1.16.3 ([01aecf6](https://github.com/kontrollanten/algolia-places-react/commit/01aecf6))
+* **deps:** update dependency places.js to v1.16.4 ([28f4f93](https://github.com/kontrollanten/algolia-places-react/commit/28f4f93))
+* fix server-side rendering ([4f592eb](https://github.com/kontrollanten/algolia-places-react/commit/4f592eb))
+
+
+
 # [1.4.0](https://github.com/kontrollanten/algolia-places-react/compare/v1.0.7...v1.4.0) (2019-02-26)
 
 
