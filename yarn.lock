@@ -9308,10 +9308,10 @@ react-simple-code-editor@^0.9.7:
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.9.7.tgz#5cba6c0b482c51d97101cb2f69877e75176bb4e4"
   integrity sha512-+DEz+odZBwuBgTQB3uF0/RTjDmQXDYLR4KaOAkBtR68fF3xFsGzVk/ujlNQtpHp5OPZcBVz8Zmj8l7Csw3VmLw==
 
-react-styleguidist@9.1.0:
-  version "9.1.0"
-  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-9.1.0.tgz#a546b546052a3b684124fe44b1add87ccadf44a6"
-  integrity sha512-0HgX6BE6bMEjRVexWSV0otCbV8+VsVizC4wu6ADxeRgj5Pdfg+O+D+vaRL0CyIp0hRnhz7wzQkNTRiNB72AWVw==
+react-styleguidist@9.1.2:
+  version "9.1.2"
+  resolved "https://registry.yarnpkg.com/react-styleguidist/-/react-styleguidist-9.1.2.tgz#611786accb2bc446145518ef906c23f037847401"
+  integrity sha512-Hk2h87mVF2RrVunP1893zxX8Cfuzfbg+C7IbQ/vau4mZsmPko+o9gGkXpLLuYDsWlvIchI99uFbrCwCOVqlE5w==
   dependencies:
     "@vxna/mini-html-webpack-template" "^0.1.7"
     acorn "^6.1.1"
