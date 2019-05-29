@@ -9503,10 +9503,10 @@ realpath-native@^1.1.0:
   dependencies:
     util.promisify "^1.0.0"
 
-rebass@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/rebass/-/rebass-3.1.0.tgz#6f3779a20fd5e196623f45463b2aa8843e5feb5e"
-  integrity sha512-FtmBb0bDT8q8HaGT4uAiJAQKZOdMsdonx6vp/cjnPc23FdMoo74ClTm0vJAwkWY1KzA0LCvmPbyGvWE0FFMR8w==
+rebass@3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/rebass/-/rebass-3.1.1.tgz#b318d2f4ed1bb35532392a97e0984474f160122a"
+  integrity sha512-c/mFtt5luxoVHwsRSx5sD27DzLoEIO1gQKSal1RPsj+cf4jfkei3l00eULTm2HA0er0r8fRNZJKTE8AJVc+GRQ==
   dependencies:
     styled-system "^4.0.8"
 
