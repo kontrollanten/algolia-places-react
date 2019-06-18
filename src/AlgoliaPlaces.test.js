@@ -34,7 +34,15 @@ describe('AlgoliaPlaces', () => {
 
       expect(wrapper.find('input').props()['aria-label']).to.equal(placeholder);
     });
+    it('should expose a places ref', () => {
+      const placesRef = sinon.spy();
+      mount(<AlgoliaPlaces placesRef={placesRef} />);
+      expect(placesRef.calledOnce).to.equal(true);
+      const ref = placesRef.firstCall.args[0];
+      expect(ref).to.include.keys(['setVal', 'getVal']);
+    });
   });
+
 
   describe('validation', () => {
     beforeAll(() => {

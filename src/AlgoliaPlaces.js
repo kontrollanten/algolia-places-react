@@ -8,6 +8,8 @@ export default class AlgoliaPlaces extends React.Component {
   static propTypes = {
     /** Placeholder for input field. */
     placeholder: PropTypes.string,
+    /** Reference setter for Places object. */
+    placesRef: PropTypes.func,
     /* eslint-disable react/no-unused-prop-types */
     /** https://community.algolia.com/places/documentation.html#api-events-cursorchanged */
     onCursorChanged: PropTypes.func,
@@ -57,6 +59,7 @@ export default class AlgoliaPlaces extends React.Component {
 
   static defaultProps = {
     placeholder: 'Type an address',
+    placesRef: null,
     onCursorChanged: null,
     onSuggestions: null,
     onChange: null,
@@ -73,6 +76,7 @@ export default class AlgoliaPlaces extends React.Component {
       ...this.props.options,
       container: this.autocompleteElem,
     });
+    if (this.props.placesRef) this.props.placesRef(this.autocomplete);
 
     this.autocompleteListeners = [
       'onSuggestions',
@@ -109,6 +113,7 @@ export default class AlgoliaPlaces extends React.Component {
       onLimit,
       onSuggestions,
       options,
+      placesRef,
       ...inputProps
     } = this.props;
 
