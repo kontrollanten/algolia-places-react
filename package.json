@@ -83,7 +83,7 @@
     "string-replace-webpack-plugin": "0.1.3",
     "styled-components": "4.3.1",
     "webpack": "4.33.0",
-    "webpack-cli": "3.3.3"
+    "webpack-cli": "3.3.6"
   },
   "dependencies": {
     "places.js": "1.16.4",
