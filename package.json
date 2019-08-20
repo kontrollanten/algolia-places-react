@@ -62,7 +62,7 @@
     "cz-conventional-changelog": "3.0.2",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.14.0",
-    "eslint": "6.2.0",
+    "eslint": "6.2.1",
     "eslint-config-airbnb": "17.1.1",
     "eslint-plugin-import": "2.18.2",
     "eslint-plugin-jest": "22.15.1",
