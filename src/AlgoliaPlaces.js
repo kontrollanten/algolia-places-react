@@ -86,8 +86,8 @@ export default class AlgoliaPlaces extends React.Component {
       'onLimit',
       'onError',
     ]
-      .filter(prop => !!this.props[prop])
-      .map(prop => ({ prop, eventName: prop.substr(2).toLowerCase() }));
+      .filter((prop) => !!this.props[prop])
+      .map((prop) => ({ prop, eventName: prop.substr(2).toLowerCase() }));
 
     this.autocompleteListeners
       .forEach(({ prop, eventName }) => this.autocomplete.on(eventName, this.props[prop]));

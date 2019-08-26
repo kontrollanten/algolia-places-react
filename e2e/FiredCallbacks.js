@@ -14,7 +14,7 @@ const PanelHeader = styled.div`
 `;
 
 const FiredCallbacks = ({ callbacks }) => (
-  <React.Fragment>
+  <>
     <Heading fontSize={3}>Fired callbacks:</Heading>
     {callbacks
       .map((cb, index, arr) => (
@@ -39,7 +39,7 @@ const FiredCallbacks = ({ callbacks }) => (
           )}
         </div>
       ))}
-  </React.Fragment>
+  </>
 );
 
 FiredCallbacks.propTypes = {
