@@ -11,8 +11,11 @@ module.exports = {
   },
   "rules": {
     "react/jsx-filename-extension": 0,
+    "react/jsx-props-no-spreading": 0,
     "indent": ["error", 2],
     "react/destructuring-assignment": 0,
+    "react/state-in-constructor": 0,
+    "react/static-property-placement": 0,
   },
   "overrides": [
     {

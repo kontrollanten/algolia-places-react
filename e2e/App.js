@@ -38,7 +38,7 @@ export default class App extends React.Component {
   }
 
   addFiredCallback({ name, args }) {
-    this.setState(state => ({
+    this.setState((state) => ({
       firedCallbacks: [
         {
           name,
@@ -52,7 +52,7 @@ export default class App extends React.Component {
   render() {
     return (
       <ThemeProvider theme={{ main: 'mediumseagreen' }}>
-        <React.Fragment>
+        <>
           <a href="https://github.com/kontrollanten/algolia-places-react">
             <img
               style={{
@@ -84,8 +84,7 @@ export default class App extends React.Component {
     onLimit={this.handleLimit}
     onSuggestions={this.handleSuggestions}
   />
-  \`\`\``
-                }
+  \`\`\``}
               />
 
               <Link href="/api">
@@ -97,7 +96,7 @@ export default class App extends React.Component {
               <FiredCallbacks callbacks={this.state.firedCallbacks} />
             </Box>
           </Flex>
-        </React.Fragment>
+        </>
       </ThemeProvider>
     );
   }
