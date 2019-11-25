@@ -2245,16 +2245,13 @@ ajv@^6.9.1:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-algolia-aerial@^1.5.3:
-  version "1.5.3"
-  resolved "https://registry.npmjs.org/algolia-aerial/-/algolia-aerial-1.5.3.tgz#c8b8ca6bc484164ffc7b36717689a424ea6bfe6c"
-
-algoliasearch@^3.31.0:
-  version "3.32.0"
-  resolved "https://registry.npmjs.org/algoliasearch/-/algoliasearch-3.32.0.tgz#5818168c26ff921bd0346a919071bac928b747ce"
+algoliasearch@^3.35.1:
+  version "3.35.1"
+  resolved "https://registry.yarnpkg.com/algoliasearch/-/algoliasearch-3.35.1.tgz#297d15f534a3507cab2f5dfb996019cac7568f0c"
+  integrity sha512-K4yKVhaHkXfJ/xcUnil04xiSrB8B8yHZoFEhWNpXg23eiCnqvTZw1tn/SqvdsANlYHLJlKl0qi3I/Q2Sqo7LwQ==
   dependencies:
     agentkeepalive "^2.2.0"
-    debug "^2.6.8"
+    debug "^2.6.9"
     envify "^4.0.0"
     es6-promise "^4.1.0"
     events "^1.1.0"
@@ -2559,10 +2556,10 @@ atob@^2.1.1:
   version "2.1.2"
   resolved "https://registry.npmjs.org/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
-autocomplete.js@^0.36.0:
-  version "0.36.0"
-  resolved "https://registry.yarnpkg.com/autocomplete.js/-/autocomplete.js-0.36.0.tgz#94fe775fe64b6cd42e622d076dc7fd26bedd837b"
-  integrity sha512-jEwUXnVMeCHHutUt10i/8ZiRaCb0Wo+ZyKxeGsYwBDtw6EJHqEeDrq4UwZRD8YBSvp3g6klP678il2eeiVXN2Q==
+autocomplete.js@^0.37.0:
+  version "0.37.0"
+  resolved "https://registry.yarnpkg.com/autocomplete.js/-/autocomplete.js-0.37.0.tgz#bcfbfd7bcabe90e90fad4c2b1aaa931379a10c38"
+  integrity sha512-MxYfNb89sl7IRhNdEJv6z8dSfA7lVeU7Dk6m/+/ih0/tPLsbxIM7uPVsnWEUh4j7dFqJktlM7hCeU7jmx6VC8A==
   dependencies:
     immediate "^3.2.3"
 
@@ -9148,14 +9145,13 @@ pkg-up@2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-places.js@1.16.4:
-  version "1.16.4"
-  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.16.4.tgz#96616ce63dc675c2e60aa016633a03e9e43b2c86"
-  integrity sha512-W0AMzQyy/SD5MS6DmDuIbXJXUJ/tuBidYLywOJwPCDBz+MowPOoRaallSWgt/QwiJFDFYCePMAGMVAfW+eO5Tg==
+places.js@1.17.1:
+  version "1.17.1"
+  resolved "https://registry.yarnpkg.com/places.js/-/places.js-1.17.1.tgz#fc6ef07f5ee87ec332820d7d03ac4c894a8ff764"
+  integrity sha512-TzDw893Uo3121vmEg0oV5L0HVbxcHUyanaSmnwcMs0Zll1F83/06lNJRcMiiuwNQWIik6xY3BeDDZzpaMaOILA==
   dependencies:
-    algolia-aerial "^1.5.3"
-    algoliasearch "^3.31.0"
-    autocomplete.js "^0.36.0"
+    algoliasearch "^3.35.1"
+    autocomplete.js "^0.37.0"
     events "^3.0.0"
     insert-css "^2.0.0"
 
