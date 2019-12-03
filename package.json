@@ -76,7 +76,7 @@
     "react-json-view": "1.19.1",
     "react-markdown": "4.1.0",
     "react-styleguidist": "10.2.1",
-    "rebass": "3.2.2",
+    "rebass": "4.0.7",
     "sinon": "7.5.0",
     "sinon-chai": "3.3.0",
     "standard-version": "7.0.0",
