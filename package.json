@@ -67,7 +67,7 @@
     "eslint-plugin-import": "2.20.0",
     "eslint-plugin-jest": "23.6.0",
     "eslint-plugin-jsx-a11y": "6.2.3",
-    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-react": "7.18.0",
     "husky": "4.0.3",
     "jest-cli": "24.9.0",
     "parcel-bundler": "1.12.3",
