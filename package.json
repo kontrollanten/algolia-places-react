@@ -69,7 +69,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.18.0",
     "husky": "4.2.1",
-    "jest-cli": "25.5.3",
+    "jest-cli": "25.5.4",
     "parcel-bundler": "1.12.4",
     "react": "16.12.0",
     "react-dom": "16.12.0",
