@@ -251,6 +251,23 @@ describe('AlgoliaPlaces', () => {
       expect(onClear.calledOnce).to.equal(true);
     });
 
+    it('should call onLocate when the pin is clicked', async () => {
+      const onLocate = sinon.spy();
+      const onSuggestions = sinon.spy();
+
+      const wrapper = mount(<AlgoliaPlaces
+        onLocate={onLocate}
+        onSuggestions={onSuggestions}
+      />);
+
+      wrapper.getDOMNode().querySelector('.ap-icon-pin').dispatchEvent(new MouseEvent('click', {
+        bubbles: true,
+        cancelable: true,
+      }));
+
+      expect(onLocate.calledOnce).to.equal(true);
+    });
+
     it('should call onLimit when HTTP request to Algolia returns 489', async () => {
       const onLimit = sinon.spy();
 
