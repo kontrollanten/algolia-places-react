@@ -19,6 +19,8 @@ export default class AlgoliaPlaces extends React.Component {
     onChange: PropTypes.func,
     /** https://community.algolia.com/places/documentation.html#api-events-clear */
     onClear: PropTypes.func,
+    /** https://community.algolia.com/places/documentation.html#api-events-locate */
+    onLocate: PropTypes.func,
     /** https://community.algolia.com/places/documentation.html#api-events-limit */
     onLimit: PropTypes.func,
     /** https://community.algolia.com/places/documentation.html#api-events-error */
@@ -70,6 +72,7 @@ export default class AlgoliaPlaces extends React.Component {
     onSuggestions: null,
     onChange: null,
     onClear: null,
+    onLocate: null,
     onLimit: null,
     onError: null,
     options: {},
@@ -89,6 +92,7 @@ export default class AlgoliaPlaces extends React.Component {
       'onCursorChanged',
       'onChange',
       'onClear',
+      'onLocate',
       'onLimit',
       'onError',
     ]
@@ -116,6 +120,7 @@ export default class AlgoliaPlaces extends React.Component {
       onClear,
       onCursorChanged,
       onError,
+      onLocate,
       onLimit,
       onSuggestions,
       options,

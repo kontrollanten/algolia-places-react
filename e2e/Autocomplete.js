@@ -35,6 +35,14 @@ const Autocomplete = ({ onCallback }) => {
     console.log('Fired when the input is cleared.');
   };
 
+  const handleLocate = (data) => {
+    onCallback({
+      name: 'onLocate',
+      args: data,
+    });
+    console.log('Fired when pin icon is clicked.');
+  };
+
   const handleLimit = (data) => {
     onCallback({
       name: 'onLimit',
@@ -66,6 +74,7 @@ const Autocomplete = ({ onCallback }) => {
       onSuggestions={handleSuggestions}
       onCursorChanged={handleCursorChanged}
       onClear={handleClear}
+      onLocate={handleLocate}
       onLimit={handleLimit}
       onError={handleError}
     />
