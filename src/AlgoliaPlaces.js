@@ -44,13 +44,19 @@ export default class AlgoliaPlaces extends React.Component {
       aroundLatLng: PropTypes.string,
       aroundLatLngViaIP: PropTypes.bool,
       aroundRadius: PropTypes.number,
-      templates: PropTypes.object,
+      templates: PropTypes.shape({
+        suggestion: PropTypes.string,
+        value: PropTypes.string,
+      }),
       style: PropTypes.bool,
       appId: PropTypes.string,
       apiKey: PropTypes.string,
       useDeviceLocation: PropTypes.bool,
+      // eslint-disable-next-line react/forbid-prop-types
       computeQueryParams: PropTypes.object,
+      // eslint-disable-next-line react/forbid-prop-types
       clientOptions: PropTypes.object,
+      // eslint-disable-next-line react/forbid-prop-types
       autocompleteOptions: PropTypes.object,
       insideBoundingBox: PropTypes.string,
       insidePolygon: PropTypes.string,

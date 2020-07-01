@@ -43,7 +43,6 @@ describe('AlgoliaPlaces', () => {
     });
   });
 
-
   describe('validation', () => {
     beforeAll(() => {
       sinon.stub(console, 'error');

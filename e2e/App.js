@@ -88,7 +88,7 @@ export default class App extends React.Component {
               />
 
               <Link href="/api">
-      Read API documentation here
+                Read API documentation here
               </Link>
 
             </Box>
