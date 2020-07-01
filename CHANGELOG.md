@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/kontrollanten/algolia-places-react/compare/v1.5.1...v1.6.0) (2020-07-01)
+
+
+### Features
+
+* add onLocate event ([89955b9](https://github.com/kontrollanten/algolia-places-react/commit/89955b94b4408182ea69fdeacaa4bdf74ff54d99))
+
+
+### Bug Fixes
+
+* **deps:** update dependency places.js to v1.19.0 ([65bc51a](https://github.com/kontrollanten/algolia-places-react/commit/65bc51a82e54ce2ba90cc614208e4ff98b7cc740))
+
 ### [1.5.1](https://github.com/kontrollanten/algolia-places-react/compare/v1.5.0...v1.5.1) (2019-12-08)
 
 
