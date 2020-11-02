@@ -30,25 +30,26 @@ module.exports = {
       {
         /** Workaround while waiting for https://github.com/madrobby/zepto/pull/1319 */
         test: /\.js$/,
-        loader: StringReplacePlugin.replace({
-          replacements: [
-            {
-              pattern: /e.data = data/g,
-              replacement: function() { 
-                return `
-                  var dataPropDescriptor = Object.getOwnPropertyDescriptor(e, 'data')
-                  if (!dataPropDescriptor || dataPropDescriptor.writable) {
-                    try {
-                      e.data = data
-                    } catch (error) { }
-                  }
-                `; 
+        use: {
+          loader: 'string-replace-webpack-plugin',
+          options: {
+            replacements: [
+              {
+                pattern: /e.data = data/g,
+                replacement: () => `
+                    var dataPropDescriptor = Object.getOwnPropertyDescriptor(e, 'data')
+                    if (!dataPropDescriptor || dataPropDescriptor.writable) {
+                      try {
+                        e.data = data
+                      } catch (error) { }
+                    }
+                  `,
               },
-            }
-          ]
-        }),
-      }
-    ]
+            ],
+          },
+        },
+      },
+    ],
   },
 
   plugins: [
