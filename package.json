@@ -43,7 +43,7 @@
     "react-dom": "^16.4.0"
   },
   "devDependencies": {
-    "@babel/core": "7.12.7",
+    "@babel/core": "7.12.8",
     "@babel/plugin-proposal-class-properties": "7.12.1",
     "@babel/plugin-transform-react-jsx": "7.12.7",
     "@babel/plugin-transform-runtime": "7.12.1",
