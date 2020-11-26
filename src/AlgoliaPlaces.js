@@ -47,8 +47,8 @@ export default class AlgoliaPlaces extends React.Component {
       aroundLatLngViaIP: PropTypes.bool,
       aroundRadius: PropTypes.number,
       templates: PropTypes.shape({
-        suggestion: PropTypes.string,
-        value: PropTypes.string,
+        suggestion: PropTypes.func,
+        value: PropTypes.func,
       }),
       style: PropTypes.bool,
       appId: PropTypes.string,
