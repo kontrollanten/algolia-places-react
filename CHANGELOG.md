@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.6.1](https://github.com/kontrollanten/algolia-places-react/compare/v1.6.0...v1.6.1) (2020-12-05)
+
+
+### Bug Fixes
+
+* **algoliaplaces:** templates proptypes ([0db7b84](https://github.com/kontrollanten/algolia-places-react/commit/0db7b8401b65f80c83e5fb9dfddb8def9a9dc5a7))
+
 ## [1.6.0](https://github.com/kontrollanten/algolia-places-react/compare/v1.5.1...v1.6.0) (2020-07-01)
 
 
