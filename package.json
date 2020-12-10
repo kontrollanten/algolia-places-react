@@ -7,8 +7,8 @@
   "author": "kontrollanten",
   "license": "MIT",
   "scripts": {
-    "build": "MINIMIZE=true webpack --output-filename=index.js",
-    "build:es": "webpack --output-filename=index.es.js",
+    "build": "MINIMIZE=true webpack",
+    "build:es": "BUILD_ES=true webpack",
     "cz": "git-cz",
     "demo": "parcel e2e/index.html",
     "demo:build": "parcel build e2e/index.html -d docs --public-url /",
