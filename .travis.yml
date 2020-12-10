@@ -15,6 +15,8 @@ jobs:
       script: yarn lint
     - stage: unit
       script: yarn test:ci
+    - stage: build
+      script: yarn build && yarn build:es
     - stage: deploy
       script: echo "Deploying to npm ..."
       before_deploy:
