@@ -9,12 +9,12 @@ module.exports = {
 
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
+    filename: process.env.BUILD_ES ? 'index.es.js' : 'index.js',
     libraryTarget: 'commonjs2',
   },
 
   optimization: {
-    minimize: process.env.MINIMIZE === 'true'
+    minimize: process.env.MINIMIZE === 'true',
   },
 
   module: {
