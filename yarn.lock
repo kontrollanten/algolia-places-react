@@ -11823,10 +11823,10 @@ react-is@^17.0.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-17.0.1.tgz#5b3531bd76a645a4c9fb6e693ed36419e3301339"
   integrity sha512-NAnt2iGDXohE5LI7uBnLnqvLQMtzhkiAOLXTmv+qnF9Ky7xAPcX8Up/xWIhxvLVGJvuLiNc4xQLtuqDRzb4fSA==
 
-react-json-view@1.21.0:
-  version "1.21.0"
-  resolved "https://registry.yarnpkg.com/react-json-view/-/react-json-view-1.21.0.tgz#3d9c42b4554fc30b2152c5ca0b81ce121d72f4cb"
-  integrity sha512-qdN4XepZhjjgIDVsLE2d78u7gcqcq4lQV5puoDGo+js+SBMahkVXc+xI/GhLC0/SwYHwiiQXg8LQXfvBTryQlQ==
+react-json-view@1.21.1:
+  version "1.21.1"
+  resolved "https://registry.yarnpkg.com/react-json-view/-/react-json-view-1.21.1.tgz#221b3ec1f84d7225c1cbb56c504ab3e1d06e66ab"
+  integrity sha512-AonvGea4nWlsnNXCbnSdUHsetyNS8rUMhbFHS9eFaDB1oeaxgHcVsqo5LhGRMvWybfDdjVUo0xzDoMQP7jbrXw==
   dependencies:
     flux "^4.0.1"
     react-base16-styling "^0.6.0"
